@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test1</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content" style="padding-left: 55px;margin: 0;">
+		<div id="code" style="font-size: 22px;margin-top: 0;">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2016—12-30,</span><br />
+			<span class="space"/><span class="comments" id="now">*2017-12-02.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">古玩店</span> 古玩店<br />
+			Girl name = <span class="keyword">古玩店</span> 古玩店<br />
+			<span class="comments">// 古玩店 古玩店 古玩店 古玩店. </span><br />
+			The 古玩店 古玩店 the 古玩店;<br />
+			<span class="comments">//古玩店r.</span><br />
+			The girl loved the boy;<br />
+			<span class="comments">// 古玩店.</span><br />
+			The boy can 古玩店 girl;<br />
+			<span class="comments">// 古玩店.</span><br />
+			The girl can no古玩店he boy;<br />
+			<span class="comments">// B古玩店 over the sky.</span><br />
+			<span class="comments">// Whet古玩店ers.</span><br />
+			<span class="keyword">Th古玩店</span> v古玩店y <span class="keyword">古玩店</span>;<br />
+			<span class="keyword">古玩店</span> 古玩店 <span class="keyword">古玩店</span>;<br />
+			<span class="placeholder"/><span class="comments">// 古玩店</span><br />
+			<span class="placeholder"/><span class="comments">// 古玩店.</span><br />
+			<span class="placeholder"/>古玩店;<br />
+			<span class="comments">// T古玩店</span><br />
+			<br>
+			<br>
+			古玩店<br />
+			古玩店<br />
+		</div>
+		<div id="loveHeart" style="margin-top: 80px;">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是古玩店。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					古玩店。<br/>
+					<div class="signature">-古玩店</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<audio src="../music/love.mp3" autoplay="autoplay"></audio>
+<script type="text/javascript">
+	
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+$("#now").text("*"+together.getFullYear()+"-"+now(together.getMonth()+1)+"-"+now(together.getDate())+".")
+together.setFullYear(2018, 0, 24);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+function now(e){
+	return e>9?e:"0"+e;
+}
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+
+</div>
+</body>
+</html>
